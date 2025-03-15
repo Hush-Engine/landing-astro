@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import WhatWhy from '../components/What&Why.astro';
+import Highlights from '../components/Highlights.astro';
+import BlogList from '../components/BlogList';
+import Team from '../components/Team.astro';
+import Banner from '../components/Banner.astro';
+import Footer from '../components/Footer.astro';
+
+import { getCollection } from 'astro:content';
+
+const blogPosts = (await getCollection('blog'))
+  .sort(
+    (post1, post2) =>
+      new Date(post2.data.date).valueOf() - new Date(post1.data.date).valueOf()
+  )
+  .slice(0, 3);
+---
+
+<Layout>
+  <Header />
+  <HeroSection />
+  <WhatWhy />
+  <Highlights />
+  <Team />
+  <BlogList client:visible blogPosts={blogPosts} isHome={true} />
+  <Banner />
+  <Footer />
+</Layout>

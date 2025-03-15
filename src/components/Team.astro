@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import '../styles/temp.css';
+
+import TeamItem from '../components/TeamItem.astro';
+---
+
+<section class='darkBg py-4 mb-5'>
+  <div class='container text-white py-4 teamContainer'>
+    <div class='px-3'>
+      <p class='m-0 sectionTitle'>Meet the team</p>
+      <p class='mt-4 mb-5 description'>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+    <div class='row w-100 m-0'>
+      <div class='col-12 col-md-6 col-lg-6 col-xl-6 mb-4 teamCard leftCard'>
+          <TeamItem 
+          name="Alan Ramirez Herrera" 
+          position="Lead Engine Engineer" 
+          github="https://github.com/Alan5142"
+          linkedin="https://www.linkedin.com/in/alan5142/"
+        />
+      </div>
+      <div class='col-12 col-md-6 col-lg-6 col-xl-6 mb-4 teamCard leftCard'>
+        <TeamItem 
+          pictureSrc="src/assets/pictures/NefProfile.jpg" 
+          name="Leónidas Neftalí" 
+          position="Lead Engine Engineer" 
+          github="https://github.com/Kyn21kx"
+          linkedin="https://www.linkedin.com/in/le%C3%B3nidas-neftal%C3%AD-gonz%C3%A1lez-campos-7a650a16b/"
+        />
+      </div>
+    </div>
+  </div>
+</section>

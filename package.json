@@ -1,0 +1,17 @@
+{
+  "name": "hushengine-landing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.1",
+    "astro": "^5.4.1",
+    "bootstrap": "^5.3.3",
+    "typescript-language-server": "^0.9.7"
+  }
+}

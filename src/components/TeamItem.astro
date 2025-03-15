@@ -1,0 +1,43 @@
+---
+import "../styles/global.css";
+import "../styles/temp.css";
+const { name, position, description, pictureSrc, github, linkedin, instagram } = Astro.props;
+---
+
+<div class="neonContainer teamCardContent">
+    <div class="row w-100 teamContent">
+        <div
+            class="col-5 d-flex align-items-center justify-content-center py-3"
+        >
+            <img
+                src={pictureSrc ?? "https://i.postimg.cc/HWV3dzGf/placeholder.jpg"}
+                class="w-75 img-fluid rounded-pill ms-2"
+            />
+        </div>
+        <div class="col-7 py-3">
+            <p class="m-0 fw-bold">{name}</p>
+            <p class="m-0 description">{position}</p>
+            <hr class="my-2" />
+            <p class="m-0 description d-none d-md-block d-lg-block d-xl-block">
+                {description}
+            </p>
+            <div class="d-flex mt-2 teamSocialIcons">
+                <a href={github} class="socialMedia rounded-pill">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href={linkedin} class="socialMedia rounded-pill">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href={instagram} class="socialMedia rounded-pill">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-12">
+            <p class="m-0 description px-2 pb-3 d-block d-md-none d-lg-none d-xl-none">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </div>
+</div>

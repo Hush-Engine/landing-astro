@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* GENERAL STYLES */
+.darkBg {}
+
+body {
+    background-color: #070912;
+    background-image: url('../../public/allPage.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(100px);
+    /* Ajusta la cantidad de desenfoque */
+    -webkit-backdrop-filter: blur(100px);
+    /* Compatibilidad con Safari */
+    z-index: -1;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.description {
+    font-size: 14px;
+}
+
+/* NAVBAR */
+.traslucentMenu {
+    background-color: rgb(255 255 255 / 20%);
+    border-radius: 1000px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.buttonContainer {
+    display: contents;
+}
+
+/* HERO SECTION */
+.buttonContainer {
+    width: 100%;
+}
+
+.traslucentCard {
+    backdrop-filter: blur(20px);
+    background-color: rgb(255, 255, 255, 20%);
+    border-radius: 10px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroTitle {
+    font-size: 50px;
+}
+
+.heroDescription {
+    width: 60%;
+    font-size: 14px;
+}
+
+/* WHAT & WHY SECTION */
+.neonContainer {
+    border-radius: 15px;
+    border: 1px solid #B851C9;
+    box-shadow: 0px 0px 5px 4px rgb(184 81 201 / 26%);
+    font-weight: 100;
+    background-color: rgb(12, 15, 24, 80%);
+}
+
+.whatWhyContainer {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.numberBullet {
+    margin-right: 10px;
+    background-color: rgb(255 255 255 / 33%);
+    width: 1.5rem;
+    height: 1.5rem;
+    aspect-ratio: 1/1;
+    text-align: center;
+    border-radius: 100px;
+}
+
+.sectionTitle {
+    font-size: 26px;
+    font-weight: 700;
+    display: inline;
+    background: linear-gradient(to right, #8803A0 20%, #FF7180 80%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.meet-team {
+    padding: 0;
+}
+
+/* HIGHLIGHTS */
+.icon {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+/* TEAM */
+.socialMedia {
+    color: white;
+    margin-right: 1rem;
+    background-color: rgb(255 255 255 / 20%);
+    width: 2rem;
+    aspect-ratio: 1/1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamCard {
+    padding: 0;
+}
+
+.teamContainer {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.leftCard {
+    padding-right: 12px;
+}
+
+.rightCard {
+    padding-left: 12px;
+}
+
+/* BANNER SECTION */
+
+.bgTranslucent {
+    background-color: rgb(255 255 255 / 16%);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.bgGradient {
+    border-radius: 5px;
+    background: linear-gradient(to right, #8803A0 20%, #FF7180 80%);
+}
+
+.bannerTitle {
+    font-size: 35px;
+}
+
+.bannerSubtitle {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+.footerBg {
+    background-color: #11141F;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.socialIconsContainer {
+    display: flex;
+    margin-top: 24px;
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .buttonContainer {
+        width: 100%;
+    }
+
+    .heroDescription {
+        width: 100%;
+    }
+
+    .heroTitle {
+        font-size: 30px;
+    }
+
+    .footerSection {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .darkBg {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+
+    .whatWhyContainer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .teamCard {
+        padding: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .bannerTitle,
+    .bannerSubtitle {
+        font-size: 25px;
+    }
+
+    .socialIconsContainer {
+        justify-content: space-evenly;;
+    }
+
+    .traslucentMenu {
+        border-radius: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .menuContainer {
+        margin-top: 10px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .blog-list-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .footerBrand {
+        justify-content: center;
+    }
+
+    .socialMedia {
+        margin-right: 0rem;
+        width: 2.6rem;
+    }
+    .socialIcon{
+        font-size: 1.5rem;
+    }
+    .teamSocialIcons{
+        justify-content: space-between;
+    }
+    .teamContent{
+        margin: 0px;
+    }
+}

@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';
+import '../styles/temp.css';
+
+const { url } = Astro;
+const currentPath = url.pathname;
+---
+
+<header class='darkBg'>
+  <div class='container pt-3'>
+    <nav class='navbar navbar-expand-lg bg-body-transparent navbar-dark'>
+      <div class='container-fluid'>
+        <a
+          class='navbar-brand d-flex justify-content-center align-items-center fw-bold gap-3'
+          href='/'
+        >
+          <img
+            src='https://i.postimg.cc/fydsZ5LN/Hush03-large.png'
+            alt='Logo'
+            width='48'
+            height='48'
+            class='d-inline-block align-text-top'
+          />
+          Hush engine
+        </a>
+
+        <button
+          class='navbar-toggler'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span class='navbar-toggler-icon'></span>
+        </button>
+
+        <div
+          class='collapse navbar-collapse menuContainer'
+          id='navbarSupportedContent'
+        >
+          <ul class='navbar-nav m-auto mb-2 mb-lg-0 traslucentMenu'>
+            <li class='nav-item px-3'>
+              <a
+                class={`nav-link ${currentPath === '/' ? 'active' : ''}`}
+                href='/'>Home</a
+              >
+            </li>
+            <li class='nav-item px-3'>
+              <a
+                class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}
+                href='/about'>About</a
+              >
+            </li>
+            <li class='nav-item px-3'>
+              <a
+                class={`nav-link ${currentPath === '/docs' ? 'active' : ''}`}
+                href='/docs'>Docs</a
+              >
+            </li>
+            <li class='nav-item px-3'>
+              <a
+                class={`nav-link ${currentPath === '/blog' ? 'active' : ''}`}
+                href='/blog'>Blog</a
+              >
+            </li>
+          </ul>
+          <div class='buttonContainer'>
+            <a
+              href="https://github.com/Hush-Engine/Hush-Engine"
+              class='btn btn-light rounded-pill fw-bold px-4 py-2 d-none d-md-none d-lg-block d-xl-block'
+              type='submit'
+            >
+              <img src='/download-icon.png' width='24' height='24' />
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

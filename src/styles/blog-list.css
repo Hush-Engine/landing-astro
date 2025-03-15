@@ -1,0 +1,75 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #070912;
+  background-image: url('../../public/allPage.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  z-index: -1;
+}
+
+.blog-list-container {
+  padding: 0 !important;
+  min-height: 535px;
+}
+
+.description {
+  font-size: 14px;
+}
+
+/* NAVBAR */
+.traslucentMenu {
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.neonContainer {
+  border-radius: 15px;
+  border: 1px solid #B851C9;
+  box-shadow: 0px 0px 5px 4px rgb(184 81 201 / 26%);
+  font-weight: 100;
+  background-color: rgb(12,15,24, 80%);
+}
+
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .darkBg{
+      margin-right: 16px;
+      margin-left: 16px;
+  }
+}
+
+.search-bar {
+  border-radius: 15px;
+  border: 1px solid #B851C9;
+  box-shadow: 0px 0px 5px 4px rgb(184 81 201 / 26%);
+  background-color: rgb(12,15,24, 80%);
+  color: #fff !important;
+}
+
+.search-bar::placeholder {
+  color: #fff;
+  opacity: 0.8;
+  font-weight: 200;
+}
+
+
+.search-bar:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #B851C9 !important;
+  background-color: rgb(12,15,24, 80%);
+}
+

@@ -1,0 +1,124 @@
+.sectionTitle {
+  font-size: 26px;
+  font-weight: 700;
+  display: inline;
+  background: linear-gradient(to right, #8803A0 20%, #FF7180 80%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Blog Post Container */
+.blog-card {
+  transition: all 0.3s ease-out;
+}
+
+.blog-card-image {
+  object-fit: cover;
+  border-radius: 15px;
+  max-height: 170px;
+}
+
+.blog-card:hover  {
+  transform: scale(1.05);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body .read-more {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.card-body .tag {
+  background-color: #ffffff33;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 6px 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.card-body .post-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-body .post-author {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  font-weight: bolder;
+}
+
+.card-body .post-date {
+  font-size: 0.7rem;
+  margin-bottom: 15px;
+}
+
+.card-body .read-more {
+  font-size: 0.7rem;
+  background-color: #fff;
+  text-decoration: none;
+  font-weight: bolder;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.card-body .read-more:hover {
+  text-decoration: none;
+}
+
+.no-results-container {
+  height: 440px;
+}
+
+img.no-results {
+  width: 300px;
+}
+
+/* Paginación */
+.pagination .page-link {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  height: 40px;
+  width: 34px;
+  padding: 0;
+}
+
+.pagination .page-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #ccc !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: white;
+  color: black;
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.pagination .page-item .page-link img {
+  width: 15px;
+  height: 15px;
+}
+
+.page-item:nth-last-child() {
+  margin-right: 0;
+}
+
+.arrow-button button {
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  padding: 0;
+}

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import '../../styles/blog-page.css';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={post.data.title}>
+  <Header />
+  <div class='d-flex justify-content-center'>
+    <article
+      class='blog-page container px-3 px-md-5 py-4 py-md-5 mt-5 mb-5 mx-4 mx-md-auto text-white'
+    >
+      <p class='text-center mb-2'>
+        <strong>Author: {post.data.author}</strong>
+      </p>
+      <p class='text-center mb-5'>
+        {
+          new Date(post.data.date).toLocaleDateString('en-US', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+          })
+        }
+      </p>
+      <div>
+        <Content />
+      </div>
+    </article>
+  </div>
+  <Footer />
+</Layout>

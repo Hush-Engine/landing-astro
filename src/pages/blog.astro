@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogList from '../components/BlogList';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/blog-list.css';
+
+import { getCollection } from 'astro:content';
+const blogPosts = await getCollection('blog');
+---
+
+<Layout title='Blog'>
+  <Header />
+  <BlogList client:visible blogPosts={blogPosts} />
+  <Footer />
+</Layout>

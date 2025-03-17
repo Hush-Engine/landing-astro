@@ -168,6 +168,30 @@ p {
     font-weight: bold;
 }
 
+/* TEAM SECTION */
+.teamContainer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teamCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.teamCardContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.teamContent {
+    flex-grow: 1;
+}
+
+.teamSocialIcons {
+    margin-top: auto;
+}
 
 /* FOOTER */
 .footerBg {

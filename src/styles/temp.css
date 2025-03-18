@@ -111,10 +111,60 @@ p {
 }
 
 /* HIGHLIGHTS */
-.icon {
-    width: 30%;
-    margin-bottom: 10px;
+.key-fetures-container {
+    padding-left: 16px;
+    padding-right: 16px;
 }
+
+.feature-item {
+    margin-bottom: 20px;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.feature-description {
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+
+    .key-fetures-container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .feature-item {
+        margin-bottom: 0;
+    }
+
+    .feature-title {
+        font-size: 18px;
+    }
+
+    .row.features-container {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 26px;
+    }
+}
+  
 
 /* TEAM */
 .socialMedia {
@@ -168,6 +218,30 @@ p {
     font-weight: bold;
 }
 
+/* TEAM SECTION */
+.teamContainer .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teamCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.teamCardContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.teamContent {
+    flex-grow: 1;
+}
+
+.teamSocialIcons {
+    margin-top: auto;
+}
 
 /* FOOTER */
 .footerBg {
@@ -256,13 +330,13 @@ p {
 
     .socialMedia {
         margin-right: 0rem;
-        width: 2.6rem;
+        width: 2.2rem;
     }
     .socialIcon{
         font-size: 1.5rem;
     }
     .teamSocialIcons{
-        justify-content: space-between;
+        gap: 20px;
     }
     .teamContent{
         margin: 0px;

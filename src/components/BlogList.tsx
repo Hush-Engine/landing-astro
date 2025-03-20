@@ -97,7 +97,7 @@ const BlogList = ({ blogPosts, isHome = false }: BlogListProps) => {
                     })}
                   </p>
                   <a
-                    href={`blog/${post.slug}`}
+                    href={isHome ? `blog/${post.slug}` : post.slug}
                     className='text-black text-decoration-none py-1 px-3 rounded fw-bold read-more'
                   >
                     READ MORE

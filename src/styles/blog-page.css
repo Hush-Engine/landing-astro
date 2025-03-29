@@ -28,6 +28,10 @@ p img {
   width: 100%;
 }
 
+a {
+  color: #00ffff; /* Better contrast for hyperlinks */
+}
+
 .blog-page {
   border-radius: 15px;
   border: 1px solid #B851C9;

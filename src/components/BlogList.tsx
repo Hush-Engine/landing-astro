@@ -42,8 +42,7 @@ const BlogList = ({ blogPosts, isHome = false }: BlogListProps) => {
               Discover the Lastest Hush Updates
             </p>
             <p className='mt-3 description mb-5 text-white'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Dive deep into the development, opinions and techniques used in Hush
             </p>
           </>
         )}

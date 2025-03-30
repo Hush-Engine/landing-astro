@@ -10,6 +10,21 @@ author: 'Leónidas Neftalí González Campos'
 # Writing A Shader Reflection System In Vulkan
 
 #### Note: All code presented here is a simplification of the implementation you can find in [HushEngine](https://github.com/Hush-Engine/Hush-Engine)
+
+# Table of Contents
+
+- [Writing A Shader Reflection System In Vulkan](#writing-a-shader-reflection-system-in-vulkan)
+  - [Premise and purpose](#premise-and-purpose)
+  - [The setup](#the-setup)
+    - [Some basic terminology](#some-basic-terminology)
+  - [Shader Modules](#shader-modules)
+    - [SPIRV buffers](#spirv-buffers)
+  - [Reflection bindings](#reflection-bindings)
+  - [Memory binding](#memory-binding)
+    - [Setting shader properties](#setting-shader-properties)
+  - [Usage](#usage)
+  - [Conclusion](#conclusion)
+
 ## Premise and purpose
 When making a game engine you generally want the end-user, the game developer to be able to interact and expand your systems, and rendering is one of the most important ones to get right, as it makes or breaks the style of their game. To enable our user's creativity, they need to be able to write their own shaders, and the engine should provide them with an easy to use API that will allow them to modify values of their materials at runtime or in the editor, this can make for cool mesh effects and custom post-processing alike.
 
@@ -489,6 +504,8 @@ Hush::ShaderMaterial::EError Hush::ShaderMaterial::LoadShaders(IRenderer *render
 ```
 
 Now finally, we'll generate the material instance with a rendering API-specific data allocation
+
+![Material instance](https://i.postimg.cc/vmQCCHG4/Material-instance.png)
 #### `ShaderMaterial.cpp`
 ```cpp
 void Hush::ShaderMaterial::GenerateMaterialInstance(OpaqueDescriptorAllocator *descriptorAllocator)
@@ -567,3 +584,34 @@ public:
 	}
 
 ```
+
+# Usage
+### *(Oh my god, you made it this far, congrats)*
+
+Once you have your mesh created, which is of course, implementation-specific you should be able to bind the material instance and modify its properties in a completely dynamic manner.
+
+#### `VulkanRenderer.cpp`
+```cpp
+std::filesystem::path frag(R"(C:\Hush-Engine\res\shader.frag.spv)");
+std::filesystem::path vert(R"(C:\Hush-Engine\res\shader.vert.spv)");
+
+auto material = std::make_shared<ShaderMaterial>();
+ShaderMaterial::EError err = material->LoadShaders(this, frag, vert);
+// You will need to have a previously existing global descriptor allocator available here
+material->GenerateMaterialInstance(&this->m_globalDescriptorAllocator);
+
+HUSH_ASSERT(err == ShaderMaterial::EError::None, "Failed to load shader material: {}", magic_enum::enum_name(err));
+
+// Setting properties and sending those to a mesh instance
+ShaderMaterial::EError resultCode = ShaderMaterial::EError::None;
+resultCode = material->SetProperty("pos", cameraPos); // Sending a Vec3
+HUSH_ASSERT(resultCode == ShaderMaterial::EError::None, "{}", magic_enum::enum_name(resultCode));
+
+resultCode = material->SetProperty("viewproj", proj * view);
+HUSH_ASSERT(resultCode == ShaderMaterial::EError::None, "{}", magic_enum::enum_name(resultCode)); // Sending a mat4
+this->m_meshInstance.RecordCommands(cmd, globalDescriptor);
+``` 
+
+# Conclusion
+
+If you've gotten to the end of this, I mean it, congratulations, Vulkan is not famous for being easy to work with, but hopefully this article at least gave you some fun and interesting ideas to implement on your project, we decided to write this because there were no resources I could find about this topic, and I think it's valuable information for the graphics developers of tomorrow!

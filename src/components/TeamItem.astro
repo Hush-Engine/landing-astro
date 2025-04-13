@@ -21,15 +21,18 @@ const { name, position, description, pictureSrc, github, linkedin, instagram } =
         {description}
       </p>
       <div class='d-flex mt-2 teamSocialIcons'>
+        {github && 
         <a href={github} class='socialMedia rounded-pill'>
           <i class='bi bi-github'></i>
-        </a>
+        </a>}
+        {linkedin &&
         <a href={linkedin} class='socialMedia rounded-pill'>
           <i class='bi bi-linkedin'></i>
-        </a>
+        </a>}
+        {instagram &&
         <a href={instagram} class='socialMedia rounded-pill'>
           <i class='bi bi-instagram'></i>
-        </a>
+        </a>}
       </div>
     </div>
     <div class='col-12'>

@@ -3,3 +3,31 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+blockquote {
+  border-left: 4px solid #003aae;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #55555555;
+}
+
+.info-blockquote {
+  border-left: 4px solid #003aae;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #55555595;
+}
+
+.warning-blockquote {
+  border-left: 4px solid #f0ad4e;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #55555595;
+}
+
+.error-blockquote {
+  border-left: 4px solid #d9534f;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #55555595;
+}

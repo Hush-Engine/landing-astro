@@ -23,9 +23,10 @@ author: 'Alan Ramírez Herrera'
 
 ## Introduction
 
-> ℹ️ **Note:**
-> 
-> This is not the final API. We still have work to do on exposing the API. This first part contains the binding generator and exposing the API. Future parts will contain more on using the API and consuming it from other languages.
+<blockquote class="info-blockquote">
+  <h2>ℹ️ <strong>Note:</strong></h2>
+    <p>This is not the final API. We still have work to do on exposing the API. This first part contains the binding generator and exposing the API. Future parts will contain more on using the API and consuming it from other languages.</p>
+</blockquote>
 
 Hush Engine, while written in C++, aims to support other languages, especially C#. But unfortunately, we don't expose an easy way to use
 the engine from other languages. Hush is designed to be the entry point for the application, so we need a way to expose the engine's API to other languages.
@@ -60,10 +61,11 @@ This leads us with creating a minimal C API that calls the C++ API and expose it
 User code needs an entry point. This entry point is a function with C calling convention that takes one argument: a struct with the function pointers AND a pointer to the engine instance. This is the only way to get the function pointers.
 With the engine instance, and the function pointers, the user code can call the engine API, and perform operations such as registering components, creating entities, loading the first scene, etc.
 
-> ℹ️ **Note:**
-> 
-> This is not the final API.
-> Notice that we are using C# [function pointers](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-9.0/function-pointers).
+<blockquote class="info-blockquote">
+  <h2>ℹ️ <strong>Note:</strong></h2>
+    <p>This is not the final API. Notice that we are using C# <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-9.0/function-pointers">function pointers</a>.</p>
+</blockquote>
+    
 
 ```c
 typedef struct HushEngine HushEngine;
@@ -411,9 +413,11 @@ Neat, right?
 
 Notice that for the handle types, we reinterpret the exposed type pointer to the original type. We could use a void pointer, but with a custom handle type, we gain a bit of type safety.
 
-> ℹ️ **Note:**
->
-> We still need to implement the `#include`s in the generated cpp file. This is a work in progress.
+<blockquote class="info-blockquote">
+  <h2>ℹ️ <strong>Note:</strong></h2>
+    <p>We still need to implement the <code>#include</code>s in the generated cpp file. This is a work in progress.</p>
+</blockquote>
+
 
 ## Future work
 

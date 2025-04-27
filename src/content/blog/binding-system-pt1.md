@@ -24,7 +24,7 @@ author: 'Alan Ramírez Herrera'
 ## Introduction
 
 <blockquote class="info-blockquote">
-  <h2>ℹ️ <strong>Note:</strong></h2>
+  <h5>ℹ️ <strong>Note:</strong></h5>
     <p>This is not the final API. We still have work to do on exposing the API. This first part contains the binding generator and exposing the API. Future parts will contain more on using the API and consuming it from other languages.</p>
 </blockquote>
 
@@ -62,7 +62,7 @@ User code needs an entry point. This entry point is a function with C calling co
 With the engine instance, and the function pointers, the user code can call the engine API, and perform operations such as registering components, creating entities, loading the first scene, etc.
 
 <blockquote class="info-blockquote">
-  <h2>ℹ️ <strong>Note:</strong></h2>
+  <h5>ℹ️ <strong>Note:</strong></h5>
     <p>This is not the final API. Notice that we are using C# <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-9.0/function-pointers">function pointers</a>.</p>
 </blockquote>
     
@@ -414,7 +414,7 @@ Neat, right?
 Notice that for the handle types, we reinterpret the exposed type pointer to the original type. We could use a void pointer, but with a custom handle type, we gain a bit of type safety.
 
 <blockquote class="info-blockquote">
-  <h2>ℹ️ <strong>Note:</strong></h2>
+  <h5>ℹ️ <strong>Note:</strong></h5>
     <p>We still need to implement the <code>#include</code>s in the generated cpp file. This is a work in progress.</p>
 </blockquote>
 

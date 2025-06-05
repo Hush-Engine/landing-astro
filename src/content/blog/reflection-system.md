@@ -30,6 +30,8 @@ information about types in the editor.
 
 I won't go into what is reflection, as it is a well-known concept in programming languages.
 
+It is important to mention that the `hush-reflection` tool is fully integrated into the Hush Engine CMake build system, so you don't have to worry about running it manually. It will automatically generate the reflection info for the types defined in your codebase when you edit any header file. :)
+
 ## The reflection system
 It is widely known that C++ does not provide a built-in reflection system, nor in compile time or runtime. This might change in C++26 with the introduction
 of a compile-time reflection system, but for now, we have to implement our own.

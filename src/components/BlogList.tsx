@@ -17,7 +17,9 @@ interface BlogListProps {
   isHome?: boolean;
 }
 
-const BlogList = ({ blogPosts, isHome = false }: BlogListProps) => {
+  const DEFAULT_BLOG_IMAGE = "https://i.postimg.cc/GpJSpg2B/HushBlog.png";
+
+  const BlogList = ({ blogPosts, isHome = false }: BlogListProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
@@ -67,7 +69,7 @@ const BlogList = ({ blogPosts, isHome = false }: BlogListProps) => {
               <div className='card neonContainer h-100'>
                 <div className='px-3 pt-3'>
                   <img
-                    src={post.data.thumbnail}
+                    src={post.data.thumbnail === undefined ? DEFAULT_BLOG_IMAGE : post.data.thumbnail}
                     className='blog-card-image w-100'
                     alt={post.data.title}
                   />
